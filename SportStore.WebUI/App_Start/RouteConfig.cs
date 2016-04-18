@@ -13,19 +13,14 @@ namespace SportStore.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(null,
-                "",
-                new
-                {
-                    controller = "Product",
-                    action = "List",
-                    category = (string)null,
-                    page = 1
-                }
-                );
+            routes.MapRoute(null, "",
+              new
+              {
+                  controller = "Product", action = "List", category = (string)null, page = 1
+              }
+               );
 
-            routes.MapRoute(null,
-              "Page{page}",
+            routes.MapRoute(null,"Page{page}",
             new
             {
                 controller = "Product",
@@ -57,7 +52,7 @@ namespace SportStore.WebUI
               new { page = @"\d+" }
 
         );
-            routes.MapRoute(null, "{controller}/{ action}");
+            routes.MapRoute(null, "{controller}/{action}");
 
         }
     }
